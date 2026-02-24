@@ -31,7 +31,7 @@ This repository contains the **Terraform (IaC) templates** used to automate the 
 
 ## Overview
 
-As deployments in the public cloud accelerate, it is essential to understand how to deploy Cisco products in those environments. This lab is a foundational introduction to deploying the **Cisco Secure Firewall Threat Defense Virtual (FTDv)** in **Microsoft Azure**.
+As deployments in the public cloud accelerate, it is essential to understand how to deploy Cisco products in those environments. This lab is a foundational introduction to configuring the **Cisco Secure Firewall Threat Defense Virtual (FTDv)** that is deployed on **Microsoft Azure**.
 
 The Terraform templates in this repo pre-build the underlying Azure infrastructure (VNets, subnets, NSGs, VMs, RBAC) so lab attendees can focus on the firewall configuration exercises rather than manually creating every Azure resource.
 
@@ -39,8 +39,8 @@ The Terraform templates in this repo pre-build the underlying Azure infrastructu
 
 ## Lab Objectives
 
-- Deploy Cisco Secure Firewall Threat Defense (FTDv) in Azure
-  - Stand-alone deployment
+- Register and configure Cisco Secure Firewall Threat Defense (FTDv) 
+  - Stand-alone config
   - Load-balanced firewall pair (scale + resilience)
   - Protect north-south, east-west, and outbound traffic
 - Protect a hub-and-spoke topology with FTDvs in the hub VNet
@@ -168,7 +168,7 @@ Edit [podX/terraform.tfvars](podX/terraform.tfvars) with your environment-specif
 azure_subscription_id = "<ENTER_YOUR_SUBSCRIPTION_ID>"
 
 # Required — replace with the lab user's Azure AD UPN
-user_principal_name = "PodX@ciscodemo.onmicrosoft.com"
+user_principal_name = "PodX@ciscodxemo.onmicrosoft.com"
 
 # Required — set a strong password for FTDv admin
 ftdv_admin_password = "<YOUR_FTDV_PASSWORD>"
@@ -219,12 +219,12 @@ The lab is structured into three core exercises (must be done in order) and five
 | # | Exercise | Type | Description |
 |---|---|---|---|
 | 1 | Examine the Data Center | Core | Explore the three-tier hub-and-spoke topology without any firewalls |
-| 2 | Standalone FTDv | Core | Deploy a single FTDv to inspect north-south, east-west, and outbound traffic |
+| 2 | Standalone FTDv | Core | Register and configure a single FTDv to inspect north-south, east-west, and outbound traffic |
 | 3 | Load-Balanced FTDv Pair | Core | Migrate to two FTDvs behind a Public Load Balancer (PLB) and Internal Load Balancer (ILB) |
 | 4 | Second Spoke + Inter-Spoke | Optional | Add Spoke2 and route inter-VNet / intra-subnet traffic through the FTDvs |
 | 5 | Traffic Manager + RAVPN | Optional | DNS-based load-balancing using Azure Traffic Manager and Route Server with RAVPN |
 | 6 | Gateway Load Balancer | Optional | Redirect north-south traffic to the web server via Azure Gateway Load Balancer |
-| 7 | Mock Branch Office | Optional | Deploy a branch FTDv in a separate resource group simulating a branch site |
+| 7 | Mock Branch Office | Optional | Register and configure a branch FTDv in a separate resource group simulating a branch site |
 | 8 | Branch IPsec VPN | Optional | Connect the mock branch to the Azure data center over an IPsec VPN tunnel |
 
 > **Dependency note:** Exercises 1–3 must be completed first. Exercises 4–7 can then be done in any order. Exercise 8 requires both Exercise 5 and Exercise 7 to be completed.
