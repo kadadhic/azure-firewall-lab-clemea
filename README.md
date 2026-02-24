@@ -1,10 +1,8 @@
-# LTRSEC-2683 — Deploying Resilient and Secure Networks in Azure with Cisco Secure Firewall
+# Deploying Resilient and Secure Networks in Azure with Cisco Secure Firewall
 
-> **Cisco Live EMEA 2026**
 > Authors: Gautam Bhagwandas (Customer Success Specialist) · Karmanya Dadhich (Technical Marketing Engineer)
-> Lab Guide: [https://cl-ltr.ciscolabs.com/85b196d23a/overview/](https://cl-ltr.ciscolabs.com/85b196d23a/overview/)
 
-This repository contains the **Terraform (IaC) templates** used to automate the provisioning of the full hub-and-spoke lab environment for LTRSEC-2683. The templates deploy all Azure networking, Cisco FTDv firewalls, test VMs, and RBAC assignments required for the lab exercises.
+This repository contains the **Terraform (IaC) templates** used to automate the provisioning of the full hub-and-spoke lab environment for Azure deployment of Cisco FTDv. The templates deploy all Azure networking, Cisco FTDv firewalls, test VMs, and RBAC assignments required for the lab exercises.
 
 ---
 
